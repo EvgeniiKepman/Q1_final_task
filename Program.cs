@@ -56,4 +56,9 @@ for (int i = 0; i < n; i++)
 
     else Console.Write(", ");
 }
+
+// Вывод нулевого массива, если нет удовлетворяющих элементов для итогового массива
+if(n == 0)
+Console.Write("]");
+
 Console.WriteLine();
