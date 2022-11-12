@@ -4,9 +4,18 @@
 
 Console.Clear();
 
-string[] array1 = new string[4] {"hel", "2", "wor", ":-)"};
-string[] array2 = new string[array1.Length];
+Console.WriteLine("Введите колличество элементов в массиве: ");
+int m = int.Parse(Console.ReadLine());
 
+string[] array1 = new string[m];
+
+for(int i = 0; i < m; i++)
+{
+  Console.WriteLine($"Введите {i + 1} элемент массива: ");
+  array1[i] = Console.ReadLine();
+}
+
+string[] array2 = new string[m];
 
   int n = 0;
   for(int i = 0; i < array1.Length; i++)
