@@ -4,50 +4,56 @@
 
 Console.Clear();
 
+// Ввод количества элементов в формируемом массиве
 Console.WriteLine("Введите колличество элементов в массиве: ");
 int m = int.Parse(Console.ReadLine());
 
+// Создание исходного массива
 string[] array1 = new string[m];
 
+// Заполнение исходного массива данными с консоли
 for(int i = 0; i < m; i++)
 {
   Console.WriteLine($"Введите {i + 1} элемент массива: ");
   array1[i] = Console.ReadLine();
 }
 
+// Создание итогового массива
 string[] array2 = new string[m];
 
-  int n = 0;
-  for(int i = 0; i < array1.Length; i++)
+// Отбор данных для итогового массива
+int n = 0;
+for(int i = 0; i < array1.Length; i++)
+{
+  if(array1[i].Length <= 3)
   {
-    if(array1[i].Length <= 3)
-    {
-      array2[n] = array1[i];
-      n = n + 1;
-    }
+    array2[n] = array1[i];
+    n = n + 1;
   }
+}
 
-  Console.Write("[");
+// Вывод исходного и итогового массива, согласно заданию
+Console.Write("[");
 
-  for (int i = 0; i < array1.Length; i++)
-  {
-    Console.Write($"{array1[i]}");
+for (int i = 0; i < array1.Length; i++)
+{
+  Console.Write($"{array1[i]}");
 
-    if(i == array1.Length - 1)
+  if(i == array1.Length - 1)
 
-      Console.Write("] -> [");
+    Console.Write("] -> [");
 
-      else Console.Write(", ");
-  }
+    else Console.Write(", ");
+}
 
-  for (int i = 0; i < n; i++)
-  {
-    Console.Write($"{array2[i]}");
+for (int i = 0; i < n; i++)
+{
+  Console.Write($"{array2[i]}");
 
-    if(i == n - 1)
+  if(i == n - 1)
 
-      Console.Write("]");
+    Console.Write("]");
 
-      else Console.Write(", ");
-  }
-  Console.WriteLine();
+    else Console.Write(", ");
+}
+Console.WriteLine();
